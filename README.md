@@ -1,4 +1,4 @@
-# biodiversity-starter
+# Biodiversity Starter
 
 ## Analysis of biodiveristy of species in the following National Parks:
 * Great Smoky Mountains National Park    
@@ -20,7 +20,7 @@
 
 ### Data preparation challenges
 1. Species:
-* common names: do not much for the same spiecies
+* common names: do not match for the same spiecies
 * conservation_status: nan values, not a category
 
 2. Observations:
