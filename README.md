@@ -32,6 +32,6 @@
 
 ## Sources
 
-*Data source:* [Biodiversity in National Parks] (https://www.codecademy.com/paths/bi-data-analyst/tracks/dsf-portfolio-project/modules/dscp-biodiversity-in-national-parks/kanban_projects/biodiversity-in-national-parks-portfolio-project "CodeAcademy Exericse Page")
+*Data source:* [Biodiversity in National Parks](https://www.codecademy.com/paths/bi-data-analyst/tracks/dsf-portfolio-project/modules/dscp-biodiversity-in-national-parks/kanban_projects/biodiversity-in-national-parks-portfolio-project "CodeAcademy Exericse Page")
 
 > Part of the BI Data Analyst CodeAcademy Certification Path.
