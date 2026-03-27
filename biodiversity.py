@@ -46,41 +46,57 @@ species.conservation_status = species.conservation_status.astype('category')
 species.conservation_status = species.conservation_status.cat.set_categories(species_statuses, ordered=True)
 # print(species.conservation_status.sort_values())
 
-# category, scientific_name, common_names, conservation_status
+# Handling different values
+def contradiction_indicator(subframe, column):
+    column_list = subframe[column].to_list()
+    if (len(set(column_list)) != 1):
+        return True
+    return False
+
+def new_first_value(subframe, column, new_value):
+    subframe.loc[subframe.index[0], column] = new_value
 
 def consolidate_species(dataframe):
-    species = dataframe.scientific_name.drop_duplicates().to_list()
+    new_species = species.iloc[:0].copy()
+    species_sci_names = dataframe.scientific_name.drop_duplicates().to_list()
     
-    for specie in species:
-        if len(dataframe[dataframe.scientific_name == specie]) > 1:
-            specie_frame = dataframe[dataframe.scientific_name == specie]
-            
-            # Handling category error
-            category = specie_frame.category.to_list()
-            if (len(set(category)) != 1):
-                specie_frame[0].category = 'Unknown'
-            
-            # Aligning common names
-            common_names_list = specie_frame.common_names.to_list()
-            common_names_string = ''
-            counter = 0
-            for name in common_names_list:
-                if ', ' in name:
-                    temp_name_list = name.split(', ')
-                    temp_name = ', '.join(word for word in temp_name_list)
-                else:
-                    temp_name = name
-                if (counter > 0):
-                    common_names_string += ','
-                common_names_string += temp_name
-                counter += 1
+    for specie in species_sci_names:
+        specie_frame = dataframe[dataframe.scientific_name == specie]
+        
+        # Only for more than one record of the same specie
+        if len(specie_frame) > 1:
+            # Handling category contradiction
+            if contradiction_indicator(specie_frame, 'category') == True:
+                new_first_value(specie_frame,  'category', 'Unknown')
                 
-            print(common_names_string)
+            # Handling conservation statuses contradiction:
+            if contradiction_indicator(specie_frame, 'conservation_status') == True:
+                highest_conservation_status = specie_frame.conservation_status.max()
+                new_first_value(specie_frame,  'conservation_status', highest_conservation_status)
             
-            
+        # Aligning common names
+        common_names_list = specie_frame.common_names.to_list()
+        temp_names_list = []
+        
+        for name in common_names_list:
+            if name not in temp_names_list:      
+                if ', ' in name:
+                    temp_var = name.split(', ')
+                    for s_name in temp_var:
+                        temp_names_list.append(s_name)
+                else:
+                    temp_names_list.append(name)
+        temp_names_list = set(temp_names_list)
+        common_names_string = ', '.join(name for name in temp_names_list)
+        new_first_value(specie_frame,  'common_names', common_names_string)
+        
+        # Adding a cleaned specie to our new dataframe
+        specie_frame.drop_duplicates(subset='scientific_name', keep='first', inplace=True) 
+        new_species = pd.concat([new_species, specie_frame])
+    
+    new_species.reset_index(inplace=True)
+    new_species.drop(['index'], axis=1, inplace=True)
+    return new_species
 
-consolidate_species(species)        
-
-# species = species.apply(consolidate_species).reset_index()
-
+cleaned_species = consolidate_species(species)
 
