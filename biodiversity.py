@@ -45,6 +45,18 @@ def contradiction_indicator(subframe, column):
         return True
     return False
 
+# Cleaning observation dataframe
+# scientific_name, park_name, observations
+
+def prepare_observations(dataframe):
+    sci_names = observations.scientific_name.drop_duplicates().to_list()
+    
+    for name in sci_names:
+        species_observations = observations[observations.scientific_name == name]
+        if len(species_observations) > 4:
+            print(species_observations)
+            
+
 # Cleaning species dataframe
 def prepare_species(dataframe):
     
@@ -53,18 +65,18 @@ def prepare_species(dataframe):
     dataframe.conservation_status = dataframe.conservation_status.fillna(species_statuses[0])
     dataframe.conservation_status = dataframe.conservation_status.astype('category')
     dataframe.conservation_status = dataframe.conservation_status.cat.set_categories(species_statuses, ordered=True)
-    
     species_sci_names = dataframe.scientific_name.drop_duplicates().to_list()
+    
     for one_species in species_sci_names:
         species_frame = dataframe[dataframe.scientific_name == one_species]
         
         # Only for more than one record of the same species
         if len(species_frame) > 1:
+            counter+= 1
             # Handling category contradiction
             if contradiction_indicator(species_frame, 'category') == True:
                 dataframe.loc[dataframe.scientific_name == one_species, 'category'] = 'Unknown'
-                
-            
+        
         # Aligning common names
         common_names_list = species_frame.common_names.to_list()
         temp_names_list = []
@@ -81,13 +93,6 @@ def prepare_species(dataframe):
         temp_names_list = set(temp_names_list)
         common_names_string = ', '.join(name for name in temp_names_list)
         dataframe.loc[dataframe.scientific_name == one_species, 'common_names'] = common_names_string
-    
+
     return dataframe
 
-species = prepare_species(species)
-
-# Cleaning observation dataframe
-# scientific_name, park_name, observations
-# print(observations[observations.scientific_name=='Puma concolor'].value_counts())
-# print(observations.park_name.value_counts())
-# print(len(species))
