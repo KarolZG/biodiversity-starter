@@ -1,6 +1,6 @@
 # Biodiversity Starter
 
-**_Analysis of biodiversity of species in four different parks. The main focus of analysis in showing the spread of species across the locations and the dependencies between it, their category and the conservation status._**
+**_Analysis of biodiversity of species in four different parks. The main focus of analysis lays in showing the spread of species across the locations and the dependencies between it, their category and the conservation status._**
 
 ## The observations were made in the following National Parks:
 * Great Smoky Mountains National Park    

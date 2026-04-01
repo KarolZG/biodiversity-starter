@@ -7,36 +7,48 @@ from cleanup import status_handler
 
 species = pd.read_csv('output-data/prepared_species.csv')
 observations = pd.read_csv('output-data/prepared_observations.csv')
+
+# Categories handling for further analysis
 status_handler(species)
-observations_and_species = pd.merge(observations, species, on='scientific_name', how='left')
+endangered_statuses = ["In Recovery", "Species of Concern", "Threatened", "Endangered"]
 
+# Neutral and engangered count
+neutral_length = len(species[species.conservation_status == "Neutral"])
+endangered_length = len(species[species.conservation_status != "Neutral"])
+print(f"Found {endangered_length} species with danger status and {neutral_length} without it.")
 
-# Conservation statuses boxplot
-status_by_park = observations_and_species.groupby('park_name')['conservation_status'].value_counts().reset_index()
-print(status_by_park)
+# Endangeres species analysis
+endangered_species = species[species.conservation_status == "Endangered"]
+endangered_species_names = endangered_species.scientific_name
 
-# plt.figure(figsize=(10, 6))
-# ax = plt.subplot(1, 1, 1)
-# sns.boxplot(data=status_by_park, x='park_name', palette='magma')
-# plt.title('Endangered Species by Park', fontsize=18, fontweight='bold', pad=20)
+endangered_species_obs = observations[observations.scientific_name.isin(endangered_species.scientific_name)]
+endangered_species_amounts = endangered_species_obs.groupby('scientific_name')['observations'].sum().sort_values().reset_index()
+endangered_species_amounts = pd.merge(endangered_species_amounts, species[['scientific_name', 'common_names', 'category']], on='scientific_name', how='left')
+# print(endangered_species_amounts)
 
-# plt.xlabel('National Park', fontsize=14, labelpad=20)
-# ax.set_xticks(range(4))
-# ax.set_xticklabels(['Yellowstone', 'Yosemite', 'Brice', 'Great Smoky Mountain'], fontsize=12)
+endangered_species_by_category = endangered_species_amounts.groupby('category')['observations'].count().sort_values(ascending=False).reset_index()
+# print(endangered_species_by_category)
 
-# plt.ylabel('Status', fontsize=14, labelpad=20)
+# Species with danger status - countplot
 
-# ax.tick_params(axis='both', which='major', labelsize=12)
-# ax.yaxis.grid(True, linestyle='-', alpha=0.7)
-# ax.set_axisbelow(True)
+plt.figure(figsize=(10, 6))
+ax = plt.subplot(1, 1, 1)
+sns.countplot(data=species, x='category', order=endangered_statuses, hue='category', dodge=False, palette='YlOrBr')
+plt.title('Species with Conservation Status by Category', fontsize=18, fontweight='bold', pad=20)
 
-# sns.despine()
-# plt.tight_layout()
-# # plt.savefig('plots/conservation-statuses-boxplot.png', dpi=300)
-# plt.close()
+plt.xlabel('Cateogry', fontsize=14, labelpad=20)
+plt.ylabel('Amount of Species', fontsize=14, labelpad=20)
+
+ax.tick_params(axis='both', which='major', labelsize=12)
+ax.yaxis.grid(True, linestyle='-', alpha=0.7)
+ax.set_axisbelow(True)
+
+sns.despine()
+plt.tight_layout()
+plt.savefig('plots/categories-endangered.png', dpi=300)
+plt.close()
 
 # Conservation statuses countplot
-endangered_statuses = ["In Recovery", "Species of Concern", "Threatened", "Endangered"]
 plt.figure()
 ax = plt.subplot(1, 1, 1)
 sns.countplot(data=species, x='conservation_status', order=endangered_statuses, hue='conservation_status', dodge=False, palette='YlOrBr')
@@ -88,4 +100,3 @@ plt.tight_layout()
 plt.savefig('plots/observations-by-park.png', dpi=300)
 plt.close()
 
-# New plot
