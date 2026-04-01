@@ -95,12 +95,13 @@
 
    e.g. Threatened when categories: Species of Concern and Threatened
 
-### Sources
+### Project
+
+> Part of the BI Data Analyst CodeAcademy Certification Path.
+
+### Footnotes:
 
 [^1]: *Data source:* [Biodiversity in National Parks](https://www.codecademy.com/paths/bi-data-analyst/tracks/dsf-portfolio-project/modules/dscp-biodiversity-in-national-parks/kanban_projects/biodiversity-in-national-parks-portfolio-project "CodeAcademy Exericse Page")
-
-### Risks
 [^2]: Nan values in conservation status might have been the result of omission, not always the lack of danger indicator. The analysis of observations amount and thresholds could be performed to mitigate this threat.
 [^3]: This approach might not be true, and e.g. status appearing later should be chosen.
 
-> Part of the BI Data Analyst CodeAcademy Certification Path.
