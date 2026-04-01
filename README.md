@@ -14,20 +14,28 @@
 
 ### Dataframes:
 1. Species:
-* size (rows): 5824
+* size:
+    | Raw  |        Cleaned       |
+    | ---  | -------------------  |
+    | 5824 |        5541          |
+* 283 duplicates (5824 - 5541)
 * columns: category, scientific_name, common_names, conservation_status
 2. Observations: 
-* size (rows): 5824 * 4
+* size:
+    |       Raw        |        Cleaned      |
+    | ---------------- | ------------------- |
+    | 5824 * 4 = 23296 |   5541 * 4 = 22164  |
+* 283 * 4 duplicates (283 for each of 4 parks?) 
 * scientific_name, park_name, observations
 
 ### Data preparation challenges (& conclusion)
 1. Species:
 * common names: do not match for the same spiecies
 * conservation_status: nan values, not a category
-* detected 274 species with multiple entries (same scientific name)
+* detected species with multiple entries (same scientific name)
 
 2. Observations:
-* detected 274 species with multiple entries in the same parks (contradictory amount of species in the same place)
+* detected species with multiple entries in the same parks (contradictory amount of species in the same place)
 
 > The amount of species duplicate entries is _identical_ in both dataframes.
 
