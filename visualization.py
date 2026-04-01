@@ -123,7 +123,7 @@ in_danger_category_order = species_with_in_danger_statuses['category'].value_cou
 plt.figure(figsize=(10, 6))
 ax = plt.subplot(1, 1, 1)
 sns.countplot(data=species_with_in_danger_statuses, x='category', hue='category', order=in_danger_category_order, dodge=False, palette='Set2', legend=False)
-plt.title('Species in Danger by Category', fontsize=18, fontweight='bold', pad=20)
+plt.title('Species In-Danger by Category', fontsize=18, fontweight='bold', pad=20)
 
 plt.xlabel('Category', fontsize=14, labelpad=20)
 plt.ylabel('Number of Species', fontsize=14, labelpad=20)

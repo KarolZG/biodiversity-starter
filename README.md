@@ -12,6 +12,7 @@
 
 1. Found 178 species with in danger status, including 15 endangered species. Majority of species - 5363 - didn't have any conservation status.
 2. Total observations: 3.2M
+3. The fewest observations of species with in danger statuses were noted for categories: Reptile, Amphibian and Non-Vascular Plant.
 3. Endangered species analysis (15 species with the most severe conservations status):
 
 | id |            scientific_name    | observations  |                 common_names                    |    category    |
@@ -33,6 +34,7 @@
 | 14 |                   Canis lupus |          238  |                                        Gray Wolf|          Mammal|
 
 | id |     category   |     count    |
+|----|----------------|--------------|
 |0   |         Mammal |            6 |
 |1   |           Bird |            4 |
 |2   |           Fish |            3 |
@@ -42,6 +44,11 @@
 ## Data Analysis
 
 ![Yellowstone has 1.4M observations](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/1-total-observations.png "Total Observations by Park")
+![Yellowstone with the highest 5S number values ](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/2-stat-of-park-observations.png "Observation Statistics by Park")
+![Median for observation around 120 observations ](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/3-stat-of-total-observations.png "Five Number Summary for Observations")
+![Above 140 Species of Concern](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/4-danger-scale.png "Danger Scale")
+![Species of birds have the highest amount of species in-danger](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/5-categories-in_danger.png "Total Observations by Park")
+![Reptile, Amphibian and Non-Vascular Plant with the lowest amount of observations](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/6-percentage-in_danger-by-park.png "Distribution of In-Danger Species Observations By Park")
 
 ### Dataframes:
 1. Species:
