@@ -2,7 +2,7 @@
 
 **_Analysis of biodiversity of species in four different parks. The main focus of analysis lays in showing the spread of species across the locations and the dependencies between it, their category and the conservation status._**
 
-## The observations were made in the following National Parks:
+## The observations were made in the following National Parks: [^1]
 * Great Smoky Mountains National Park    
 * Yosemite National Park                 
 * Bryce National Park
@@ -10,7 +10,59 @@
 
 ## Key findings
 
+1. Found 178 species with in danger status, including 15 endangered species. Majority of species - 5363 - didn't have any conservation status.
+2. Total observations: 3.2M
+3. Endangered species analysis (15 species with the most severe conservations status):
+
+| id |            scientific_name    | observations  |                 common_names                    |    category    |
+|----| ----------------------------- | ------------- | ------------------------------------------------| -------------- |
+| 0  |                Grus americana |          131  |                                   Whooping Crane|            Bird|
+|----| ----------------------------- | ------------- | ------------------------------------------------| -------------- |
+| 1  |                   Canis rufus |          137  |                                         Red Wolf|          Mammal|
+|----| ----------------------------- | ------------- | ------------------------------------------------| -------------- |
+| 2  |           Vermivora bachmanii |          141  |        Bachman's Wood Warbler, Bachman's Warbler|            Bird|
+|----| ----------------------------- | ------------- | ------------------------------------------------| -------------- |
+| 3  |               Noturus baileyi |          143  |                                     Smoky Madtom|            Fish|
+|----| ----------------------------- | ------------- | ------------------------------------------------| -------------- |
+| 4  |                  Rana sierrae |          144  |                 Sierra Nevada Yellow-Legged Frog|       Amphibian|
+|----| ----------------------------- | ------------- | ------------------------------------------------| -------------- |
+| 5  |                Myotis sodalis |          145  |            Indiana Or Social Myotis, Indiana Bat|          Mammal|
+|----| ----------------------------- | ------------- | ------------------------------------------------| -------------- |
+| 6  |             Chasmistes liorus |          146  |                                      June Sucker|            Fish|
+|----| ----------------------------- | ------------- | ------------------------------------------------| -------------- |
+| 7  |             Picoides borealis |          146  |                          Red-Cockaded Woodpecker|            Bird|
+|----| ----------------------------- | ------------- | ------------------------------------------------| -------------- |
+| 8  |  Glaucomys sabrinus coloratus |          153  |Northern Flying Squirrel, Carolina Northern Fl...|          Mammal|
+|----| ----------------------------- | ------------- | ------------------------------------------------| -------------- |
+| 9  |       Ovis canadensis sierrae |          153  |                      Sierra Nevada Bighorn Sheep|          Mammal|
+|----| ----------------------------- | ------------- | ------------------------------------------------| -------------- |
+| 10 |       Gymnogyps californianus |          156  |                                California Condor|            Bird|
+|----| ----------------------------- | ------------- | ------------------------------------------------| -------------- |
+| 11 |             Myotis grisescens |          160  |                                      Gray Myotis|          Mammal|
+|----| ----------------------------- | ------------- | ------------------------------------------------| -------------- |
+| 12 |                 Geum radiatum |          162  |                  Mountain Avens, Spreading Avens|  Vascular Plant|
+|----| ----------------------------- | ------------- | ------------------------------------------------| -------------- |
+| 13 |          Etheostoma percnurum |          166  |                                 Duskytail Darter|            Fish|
+|----| ----------------------------- | ------------- | ------------------------------------------------| -------------- |
+| 14 |                   Canis lupus |          238  |                                        Gray Wolf|          Mammal|
+|----| ----------------------------- | ------------- | ------------------------------------------------| -------------- |
+
+| id |     category   |     count    |
+|----| -------------- | ------------ |
+|0   |         Mammal |            6 |
+|----| -------------- | ------------ |
+|1   |           Bird |            4 |
+|----| -------------- | ------------ |
+|2   |           Fish |            3 |
+|----| -------------- | ------------ |
+|3   |      Amphibian |            1 |
+|----| -------------- | ------------ |
+|4   | Vascular Plant |            1 |
+|----| -------------- | ------------ |
+
 ## Data Analysis
+
+
 
 ### Dataframes:
 1. Species:
@@ -46,22 +98,23 @@
 
     e.g. Road Hawk and Road-Hawk
 
-3. Replaced the nan values for conservation status with _Neutral_ value. 
-4. Changed category column to categorical value with following statuses:
+3. Changed category column to categorical value with following statuses:
 
 | 0 | 1 | 2 | 3 | 4 |
 | ------- | ----------- | ------------------ | ---------- | ---------- |
 | Neutral | In Recovery | Species of Concern | Threatened | Endangered |
 
-5. For the same spiecies and contradicting categories, the more severe one were always chosen
+4. Replaced the nan values for conservation status with _Neutral_ value. [^2]
+5. For the same spiecies and contradicting categories, the more severe one were always chosen [^3]
 
    e.g. Threatened when categories: Species of Concern and Threatened
 
+### Sources
+
+[^1]*Data source:* [Biodiversity in National Parks](https://www.codecademy.com/paths/bi-data-analyst/tracks/dsf-portfolio-project/modules/dscp-biodiversity-in-national-parks/kanban_projects/biodiversity-in-national-parks-portfolio-project "CodeAcademy Exericse Page")
 
 ### Risks
-
-## Sources
-
-*Data source:* [Biodiversity in National Parks](https://www.codecademy.com/paths/bi-data-analyst/tracks/dsf-portfolio-project/modules/dscp-biodiversity-in-national-parks/kanban_projects/biodiversity-in-national-parks-portfolio-project "CodeAcademy Exericse Page")
+[^2] Nan values in conservation status might have been the result of omission, not always the lack of danger indicator. The analysis of observations amount and thresholds could be performed to mitigate this threat.
+[^3] This approach might not be true, and e.g. status appearing later should be chosen.
 
 > Part of the BI Data Analyst CodeAcademy Certification Path.
