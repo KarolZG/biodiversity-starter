@@ -13,7 +13,7 @@
 1. Found 178 species with assigned conservation statuses, including 15 endangered (the most severe conservations status) species. Majority of species (5363) lacked any conservation status.
 2. Total amount of observations for all species rounds 3.2 million. The median of observed units for each species is equal to 124, and the most frequent observed range lies lower between 75 and 90 species.
 3. The fewest observations of species with assigned conservation statuses were noted for categories: Reptile, Amphibian and Non-Vascular Plant.
-4. Detailed endangered species analysis [^4]
+4. Detailed endangered species analysis.
 
 | id |            scientific_name    | observations  |                 common_names                    |    category    |
 |----| ----------------------------- | ------------- | ------------------------------------------------| -------------- |
@@ -33,13 +33,15 @@
 | 13 |          Etheostoma percnurum |          166  |                                 Duskytail Darter|            Fish|
 | 14 |                   Canis lupus |          238  |                                        Gray Wolf|          Mammal|
 
-| id |     category   |     count    |
-|----|----------------|--------------|
-|0   |         Mammal |            6 |
-|1   |           Bird |            4 |
-|2   |           Fish |            3 |
-|3   |      Amphibian |            1 |
-|4   | Vascular Plant |            1 |
+|     category   |     count    |
+|----------------|--------------|
+|         Mammal |            6 |
+|           Bird |            4 |
+|           Fish |            3 |
+|      Amphibian |            1 |
+| Vascular Plant |            1 |
+
+5. [Detailed endagnered species analysis by park](https://github.com/KarolZG/biodiversity-starter/blob/main/output-data/endangered_species_by_park.csv)
 
 ## Data Analysis
 
@@ -118,4 +120,3 @@ and to bring more structure I have created 3 directories:
 [^1]: *Data source:* [Biodiversity in National Parks](https://www.codecademy.com/paths/bi-data-analyst/tracks/dsf-portfolio-project/modules/dscp-biodiversity-in-national-parks/kanban_projects/biodiversity-in-national-parks-portfolio-project "CodeAcademy Exercise Page")
 [^2]: Nan values in conservation status might have been the result of omission, not always the lack of danger indicator. The analysis of observations amount and thresholds could be performed to mitigate this threat.
 [^3]: This approach might not be true, and e.g. status appearing later should be chosen.
-[^4]: [Detailed endagnered species analysis by park](https://github.com/KarolZG/biodiversity-starter/blob/main/output-data/endangered_species_by_park.csv)
