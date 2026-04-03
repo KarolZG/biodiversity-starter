@@ -1,0 +1,61 @@
+scientific_name,park_name,observations,common_names,category
+Grus americana,Yellowstone National Park,57,Whooping Crane,Bird
+Vermivora bachmanii,Yellowstone National Park,58,"Bachman's Wood Warbler, Bachman's Warbler",Bird
+Rana sierrae,Yellowstone National Park,60,Sierra Nevada Yellow-Legged Frog,Amphibian
+Canis rufus,Yellowstone National Park,60,Red Wolf,Mammal
+Geum radiatum,Yellowstone National Park,63,"Mountain Avens, Spreading Avens",Vascular Plant
+Picoides borealis,Yellowstone National Park,64,Red-Cockaded Woodpecker,Bird
+Gymnogyps californianus,Yellowstone National Park,64,California Condor,Bird
+Chasmistes liorus,Yellowstone National Park,65,June Sucker,Fish
+Noturus baileyi,Yellowstone National Park,67,Smoky Madtom,Fish
+Ovis canadensis sierrae,Yellowstone National Park,67,Sierra Nevada Bighorn Sheep,Mammal
+Glaucomys sabrinus coloratus,Yellowstone National Park,67,"Northern Flying Squirrel, Carolina Northern Flying Squirrel",Mammal
+Myotis sodalis,Yellowstone National Park,68,"Indiana Or Social Myotis, Indiana Bat",Mammal
+Myotis grisescens,Yellowstone National Park,68,Gray Myotis,Mammal
+Etheostoma percnurum,Yellowstone National Park,70,Duskytail Darter,Fish
+Canis lupus,Yellowstone National Park,110,Gray Wolf,Mammal
+Noturus baileyi,Yosemite National Park,31,Smoky Madtom,Fish
+Canis rufus,Yosemite National Park,34,Red Wolf,Mammal
+Chasmistes liorus,Yosemite National Park,35,June Sucker,Fish
+Glaucomys sabrinus coloratus,Yosemite National Park,36,"Northern Flying Squirrel, Carolina Northern Flying Squirrel",Mammal
+Myotis sodalis,Yosemite National Park,36,"Indiana Or Social Myotis, Indiana Bat",Mammal
+Grus americana,Yosemite National Park,37,Whooping Crane,Bird
+Ovis canadensis sierrae,Yosemite National Park,39,Sierra Nevada Bighorn Sheep,Mammal
+Myotis grisescens,Yosemite National Park,39,Gray Myotis,Mammal
+Etheostoma percnurum,Yosemite National Park,40,Duskytail Darter,Fish
+Rana sierrae,Yosemite National Park,42,Sierra Nevada Yellow-Legged Frog,Amphibian
+Picoides borealis,Yosemite National Park,43,Red-Cockaded Woodpecker,Bird
+Vermivora bachmanii,Yosemite National Park,45,"Bachman's Wood Warbler, Bachman's Warbler",Bird
+Geum radiatum,Yosemite National Park,47,"Mountain Avens, Spreading Avens",Vascular Plant
+Gymnogyps californianus,Yosemite National Park,47,California Condor,Bird
+Canis lupus,Yosemite National Park,65,Gray Wolf,Mammal
+Vermivora bachmanii,Bryce National Park,20,"Bachman's Wood Warbler, Bachman's Warbler",Bird
+Ovis canadensis sierrae,Bryce National Park,22,Sierra Nevada Bighorn Sheep,Mammal
+Noturus baileyi,Bryce National Park,22,Smoky Madtom,Fish
+Chasmistes liorus,Bryce National Park,23,June Sucker,Fish
+Picoides borealis,Bryce National Park,24,Red-Cockaded Woodpecker,Bird
+Grus americana,Bryce National Park,24,Whooping Crane,Bird
+Geum radiatum,Bryce National Park,25,"Mountain Avens, Spreading Avens",Vascular Plant
+Etheostoma percnurum,Bryce National Park,25,Duskytail Darter,Fish
+Myotis grisescens,Bryce National Park,27,Gray Myotis,Mammal
+Myotis sodalis,Bryce National Park,27,"Indiana Or Social Myotis, Indiana Bat",Mammal
+Glaucomys sabrinus coloratus,Bryce National Park,29,"Northern Flying Squirrel, Carolina Northern Flying Squirrel",Mammal
+Canis rufus,Bryce National Park,30,Red Wolf,Mammal
+Gymnogyps californianus,Bryce National Park,30,California Condor,Bird
+Rana sierrae,Bryce National Park,31,Sierra Nevada Yellow-Legged Frog,Amphibian
+Canis lupus,Bryce National Park,43,Gray Wolf,Mammal
+Rana sierrae,Great Smoky Mountains National Park,11,Sierra Nevada Yellow-Legged Frog,Amphibian
+Canis rufus,Great Smoky Mountains National Park,13,Red Wolf,Mammal
+Grus americana,Great Smoky Mountains National Park,13,Whooping Crane,Bird
+Myotis sodalis,Great Smoky Mountains National Park,14,"Indiana Or Social Myotis, Indiana Bat",Mammal
+Gymnogyps californianus,Great Smoky Mountains National Park,15,California Condor,Bird
+Picoides borealis,Great Smoky Mountains National Park,15,Red-Cockaded Woodpecker,Bird
+Vermivora bachmanii,Great Smoky Mountains National Park,18,"Bachman's Wood Warbler, Bachman's Warbler",Bird
+Canis lupus,Great Smoky Mountains National Park,20,Gray Wolf,Mammal
+Glaucomys sabrinus coloratus,Great Smoky Mountains National Park,21,"Northern Flying Squirrel, Carolina Northern Flying Squirrel",Mammal
+Noturus baileyi,Great Smoky Mountains National Park,23,Smoky Madtom,Fish
+Chasmistes liorus,Great Smoky Mountains National Park,23,June Sucker,Fish
+Ovis canadensis sierrae,Great Smoky Mountains National Park,25,Sierra Nevada Bighorn Sheep,Mammal
+Myotis grisescens,Great Smoky Mountains National Park,26,Gray Myotis,Mammal
+Geum radiatum,Great Smoky Mountains National Park,27,"Mountain Avens, Spreading Avens",Vascular Plant
+Etheostoma percnurum,Great Smoky Mountains National Park,31,Duskytail Darter,Fish

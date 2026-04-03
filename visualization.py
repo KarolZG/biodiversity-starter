@@ -14,27 +14,7 @@ in_danger_statuses = ["In Recovery", "Species of Concern", "Threatened", "Endang
 species_with_in_danger_statuses = species[species.conservation_status.isin(in_danger_statuses)]
 endangered_species = species[species.conservation_status == "Endangered"]
 
-# Neutral and engangered count
-neutral_length = len(species[species.conservation_status == "Neutral"])
-in_danger_length = len(species[species.conservation_status != "Neutral"])
-endangered_species_length = len(endangered_species)
-total_observations = observations.observations.sum()
-
-print(f"Found {in_danger_length} species with in danger status, including {endangered_species_length} endangered species. Majority of species - {neutral_length} - didn't have any conservation status.")
-print(f'Total observations: {total_observations/1e6:.1f}M')
-
-# Endangeres species analysis
-endangered_species_obs = observations[observations.scientific_name.isin(endangered_species.scientific_name)]
-endangered_species_amounts = endangered_species_obs.groupby('scientific_name')['observations'].sum().sort_values().reset_index()
-endangered_species_amounts = pd.merge(endangered_species_amounts, species[['scientific_name', 'common_names', 'category']], on='scientific_name', how='left')
-print(endangered_species_amounts)
-
-endangered_species_by_category = endangered_species_amounts.groupby('category')['observations'].count().sort_values(ascending=False).reset_index()
-print(endangered_species_by_category)
-
-
-# Total observations by park
-observations_by_park = observations.groupby('park_name').observations.sum().sort_values(ascending=False).reset_index()
+# Park names and labels
 national_parks_names_ordered = ['Yellowstone National Park', 'Yosemite National Park', 'Bryce National Park', 'Great Smoky Mountains National Park']
 national_parks_labes_ordered = ['Yellowstone', 'Yosemite', 'Bryce', 'Great Smoky Mountains']
 park_palette = {
@@ -43,6 +23,43 @@ park_palette = {
     'Bryce National Park': '#D35400',
     'Great Smoky Mountains National Park': '#2E86C1'
 }
+
+# Neutral and engangered count
+neutral_length = len(species[species.conservation_status == "Neutral"])
+in_danger_length = len(species[species.conservation_status != "Neutral"])
+endangered_species_length = len(endangered_species)
+
+# Useful aggregates
+total_observations = observations.observations.sum()
+observations_median = round(observations.observations.median(), 0)
+
+print(f"Found {in_danger_length} species with in danger status, including {endangered_species_length} endangered species. Majority of species - {neutral_length} - didn't have any conservation status.")
+print(f'Total observations: {total_observations/1e6:.1f}M')
+print(f'Observations median: {observations_median}')
+
+# Endangeres species analysis
+endangered_species_obs = observations[observations.scientific_name.isin(endangered_species.scientific_name)]
+endangered_species_amounts = endangered_species_obs.groupby('scientific_name')['observations'].sum().sort_values().reset_index()
+endangered_species_amounts = pd.merge(endangered_species_amounts, species[['scientific_name', 'common_names', 'category']], on='scientific_name', how='left')
+# print(endangered_species_amounts)
+endangered_species_by_category = endangered_species_amounts.groupby('category')['observations'].count().sort_values(ascending=False).reset_index()
+# print(endangered_species_by_category)
+
+# Endangered species analysis by park with export to csv
+endangered_species_by_park = []
+for park in national_parks_names_ordered:
+    endangered_species_obs_in_park = endangered_species_obs[endangered_species_obs.park_name == park]
+    endangered_species_amounts_in_park = endangered_species_obs_in_park.groupby(['scientific_name', 'park_name'])['observations'].sum().sort_values().reset_index()
+    endangered_species_amounts_in_park = pd.merge(endangered_species_amounts_in_park, species[['scientific_name', 'common_names', 'category']], on='scientific_name', how='left')
+    endangered_species_by_park.append(endangered_species_amounts_in_park)
+    
+endangered_species_by_park_dataframe = pd.concat(endangered_species_by_park, ignore_index=True)
+endangered_species_by_park_dataframe.to_csv('output-data/endangered_species_by_park.csv', index=False)
+
+
+# Plots
+# Total observations by park
+observations_by_park = observations.groupby('park_name').observations.sum().sort_values(ascending=False).reset_index()
 
 plt.figure(figsize=(10, 6))
 ax = plt.subplot(1, 1, 1)
@@ -196,7 +213,7 @@ plt.close()
 plt.figure(figsize=(10,6))
 ax = plt.subplot(1, 1, 1)
 
-sns.histplot(data=observations, x='observations', bins=20, color='green')
+sns.histplot(data=observations, x='observations', bins=15, color='green')
 
 plt.title('Observations - Histplot',  fontsize=18, fontweight='bold', pad=20)
 plt.xlabel('Amount of Observations', fontsize=14, labelpad=20)
@@ -206,6 +223,11 @@ ax.tick_params(axis='both', which='major', labelsize=12)
 ax.yaxis.grid(True, linestyle='-', alpha=0.7)
 ax.set_axisbelow(True)
 
+for container in ax.containers:
+    ax.bar_label(container, fmt='%1d', padding=3, fontsize=11)
+    
+sns.despine()
 plt.tight_layout()
 plt.savefig('plots/7-observations-histplot.png', dpi=300)
 plt.close()
+

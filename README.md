@@ -10,10 +10,10 @@
 
 ## Key findings
 
-1. Found 178 species with in danger status, including 15 endangered species. Majority of species - 5363 - didn't have any conservation status.
-2. Total observations: 3.2M
-3. The fewest observations of species with in danger statuses were noted for categories: Reptile, Amphibian and Non-Vascular Plant.
-3. Endangered species analysis (15 species with the most severe conservations status):
+1. Found 178 species with assigned conservation statuses, including 15 endangered (the most severe conservations status) species. Majority of species (5363) lacked any conservation status.
+2. Total amount of observations for all species rounds 3.2 million. The median of observed units for each species is equal to 124, and the most frequent observed range lies lower between 75 and 90 species.
+3. The fewest observations of species with assigned conservation statuses were noted for categories: Reptile, Amphibian and Non-Vascular Plant.
+4. Detailed endangered species analysis [^4]
 
 | id |            scientific_name    | observations  |                 common_names                    |    category    |
 |----| ----------------------------- | ------------- | ------------------------------------------------| -------------- |
@@ -43,13 +43,26 @@
 
 ## Data Analysis
 
-![Yellowstone has 1.4M observations](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/1-total-observations.png "Total Observations by Park")
+![Yellowstone has 1.4M observations](https://github.com/KarolZG/blob/main/plots/1-total-observations.png "Total Observations by Park")
 ![Yellowstone with the highest 5S number values ](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/2-stat-of-park-observations.png "Observation Statistics by Park")
 ![Median for observation around 120 observations ](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/3-stat-of-total-observations.png "Five Number Summary for Observations")
 ![Mode for observation around 100 observations](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/7-observations-histplot.png "Observations Histplot")
 ![Above 140 Species of Concern](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/4-danger-scale.png "Danger Scale")
 ![Species of birds have the highest amount of species in-danger](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/5-categories-in_danger.png "Total Observations by Park")
 ![Reptile, Amphibian and Non-Vascular Plant with the lowest amount of observations](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/6-percentage-in_danger-by-park.png "Distribution of In-Danger Species Observations By Park")
+
+### Project Flow
+
+To optimize the running time I have splitted the project into two python files:
+
+[Data cleaning and export to new csv files](cleanup.py)
+[Data visualization](visualization.py)
+
+and to bring more structure I have created 3 directories:
+
+[Original data](https://github.com/KarolZG/biodiversity-starter/tree/main/input-data)
+[Cleaned data](https://github.com/KarolZG/biodiversity-starter/tree/main/output-data)
+[Created plots](https://github.com/KarolZG/biodiversity-starter/tree/main/plots)
 
 ### Dataframes
 1. Species:
@@ -102,7 +115,7 @@
 
 ### Footnotes
 
-[^1]: *Data source:* [Biodiversity in National Parks](https://www.codecademy.com/paths/bi-data-analyst/tracks/dsf-portfolio-project/modules/dscp-biodiversity-in-national-parks/kanban_projects/biodiversity-in-national-parks-portfolio-project "CodeAcademy Exericse Page")
+[^1]: *Data source:* [Biodiversity in National Parks](https://www.codecademy.com/paths/bi-data-analyst/tracks/dsf-portfolio-project/modules/dscp-biodiversity-in-national-parks/kanban_projects/biodiversity-in-national-parks-portfolio-project "CodeAcademy Exercise Page")
 [^2]: Nan values in conservation status might have been the result of omission, not always the lack of danger indicator. The analysis of observations amount and thresholds could be performed to mitigate this threat.
 [^3]: This approach might not be true, and e.g. status appearing later should be chosen.
-
+[^4]: [Detailed endagnered species analysis by park](https://github.com/KarolZG/biodiversity-starter/blob/main/output-data/endangered_species_by_park.csv)
