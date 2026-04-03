@@ -2,7 +2,7 @@
 
 **_Analysis of biodiversity of species in four different parks. The main focus of analysis lays in showing the spread of species across the locations and the dependencies between it, their category and the conservation status._**
 
-## The observations were made in the following National Parks: [^1]
+## The observations were made in the following US National Parks: [^1]
 * Great Smoky Mountains National Park    
 * Yosemite National Park                 
 * Bryce National Park
@@ -50,7 +50,7 @@
 ![Species of birds have the highest amount of species in-danger](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/5-categories-in_danger.png "Total Observations by Park")
 ![Reptile, Amphibian and Non-Vascular Plant with the lowest amount of observations](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/6-percentage-in_danger-by-park.png "Distribution of In-Danger Species Observations By Park")
 
-### Dataframes:
+### Dataframes
 1. Species:
 * size:
     | Raw  |        Cleaned       |
@@ -77,7 +77,7 @@
 
 > The amount of species duplicate entries is _identical_ in both dataframes.
 
-### Approach:
+### Approach
 
 1. Duplicates in observations dataframe were handled by taking the mean of observations (same spiecies, same park), replacing the first value and dropping the other entries.
 2. Common names in species dataframe for the same species were concatinated into one string after removing the identical descriptions. I have left the mutliple spellings though
@@ -95,11 +95,11 @@
 
    e.g. Threatened when categories: Species of Concern and Threatened
 
-### Project Origin:
+### Project Origin
 
 > Part of the BI Data Analyst CodeAcademy Certification Path.
 
-### Footnotes:
+### Footnotes
 
 [^1]: *Data source:* [Biodiversity in National Parks](https://www.codecademy.com/paths/bi-data-analyst/tracks/dsf-portfolio-project/modules/dscp-biodiversity-in-national-parks/kanban_projects/biodiversity-in-national-parks-portfolio-project "CodeAcademy Exericse Page")
 [^2]: Nan values in conservation status might have been the result of omission, not always the lack of danger indicator. The analysis of observations amount and thresholds could be performed to mitigate this threat.
