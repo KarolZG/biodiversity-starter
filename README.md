@@ -45,7 +45,7 @@
 
 ## Data Analysis
 
-![Yellowstone has 1.4M observations](https://github.com/KarolZG/blob/main/plots/1-total-observations.png "Total Observations by Park")
+![Yellowstone has 1.4M observations](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/1-total-observations.png "Total Observations by Park")
 ![Yellowstone with the highest 5S number values ](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/2-stat-of-park-observations.png "Observation Statistics by Park")
 ![Median for observation around 120 observations ](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/3-stat-of-total-observations.png "Five Number Summary for Observations")
 ![Mode for observation around 100 observations](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/7-observations-histplot.png "Observations Histplot")
@@ -57,14 +57,14 @@
 
 To optimize the running time I have splitted the project into two python files:
 
-[Data cleaning and export to new csv files](cleanup.py)
-[Data visualization](visualization.py)
+1. [cleanup.py - data cleaning and dataframes export to new csv files](cleanup.py)
+2. [visualization.py - data visualization](visualization.py)
 
 and to bring more structure I have created 3 directories:
 
-[Original data](https://github.com/KarolZG/biodiversity-starter/tree/main/input-data)
-[Cleaned data](https://github.com/KarolZG/biodiversity-starter/tree/main/output-data)
-[Created plots](https://github.com/KarolZG/biodiversity-starter/tree/main/plots)
+1. [input-data - original data](https://github.com/KarolZG/biodiversity-starter/tree/main/input-data)
+2. [output-data - cleaned data](https://github.com/KarolZG/biodiversity-starter/tree/main/output-data)
+3. [plots - created plots](https://github.com/KarolZG/biodiversity-starter/tree/main/plots)
 
 ### Dataframes
 1. Species:
