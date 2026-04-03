@@ -1,14 +1,14 @@
-# Biodiversity Starter
+# :microbe: Biodiversity Starter
 
 **_Analysis of biodiversity of species in four different parks. The main focus of analysis lays in showing the spread of species across the locations and the dependencies between them, their category and the conservation status._**
 
-## The observations were made in the following US National Parks: [^1]
+## 🌳 The observations were made in the following US National Parks:[^1]
 * Great Smoky Mountains National Park    
 * Yosemite National Park                 
 * Bryce National Park
 * Yellowstone National Park
 
-## Key findings
+## :clipboard: Key findings
 
 1. Found 178 species with assigned conservation statuses, including 15 endangered (the most severe conservations status) species. Majority of species (5363) lacked any conservation status.
 2. Total amount of observations for all species rounds 3.2 million. The median of observed units for each species is equal to 124, and the most frequent observed range lies lower between 75 and 90 species.
@@ -43,7 +43,7 @@
 
 5. [Detailed endagnered species analysis by park](https://github.com/KarolZG/biodiversity-starter/blob/main/output-data/endangered_species_by_park.csv)
 
-## Data Analysis
+## 📈 Data Analysis
 
 ![Yellowstone has 1.4M observations](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/1-total-observations.png "Total Observations by Park")
 ![Yellowstone with the highest 5S number values ](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/2-stat-of-park-observations.png "Observation Statistics by Park")
@@ -53,18 +53,18 @@
 ![Species of birds have the highest amount of species in-danger](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/5-categories-in_danger.png "Total Observations by Park")
 ![Reptile, Amphibian and Non-Vascular Plant with the lowest amount of observations](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/6-percentage-in_danger-by-park.png "Distribution of In-Danger Species Observations By Park")
 
-### Project Flow
+### ➡️ Project Flow
 
-To optimize the running time I have splitted the project into two python files:
+To optimize the running time I have splitted the analysis into two python files:
 
-1. [cleanup.py - data cleaning and dataframes export to new csv files](cleanup.py)
-2. [visualization.py - data visualization](visualization.py)
+1. Data cleaning and dataframes export to new csv files: [cleanup.py](cleanup.py)
+2. Data visualization: [visualization.py](visualization.py)
 
-and to bring more structure I have created 3 directories:
+To structurize the project I have created 3 directories:
 
-1. [input-data - original data](https://github.com/KarolZG/biodiversity-starter/tree/main/input-data)
-2. [output-data - cleaned data](https://github.com/KarolZG/biodiversity-starter/tree/main/output-data)
-3. [plots - created plots](https://github.com/KarolZG/biodiversity-starter/tree/main/plots)
+1. Original data: [input-data](https://github.com/KarolZG/biodiversity-starter/tree/main/input-data)
+2. Cleaned data: [output-data](https://github.com/KarolZG/biodiversity-starter/tree/main/output-data)
+3. Created plots: [plots](https://github.com/KarolZG/biodiversity-starter/tree/main/plots)
 
 ### Dataframes
 1. Species:
