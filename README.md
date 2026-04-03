@@ -1,6 +1,6 @@
 # Biodiversity Starter
 
-**_Analysis of biodiversity of species in four different parks. The main focus of analysis lays in showing the spread of species across the locations and the dependencies between it, their category and the conservation status._**
+**_Analysis of biodiversity of species in four different parks. The main focus of analysis lays in showing the spread of species across the locations and the dependencies between them, their category and the conservation status._**
 
 ## The observations were made in the following US National Parks: [^1]
 * Great Smoky Mountains National Park    
@@ -46,6 +46,7 @@
 ![Yellowstone has 1.4M observations](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/1-total-observations.png "Total Observations by Park")
 ![Yellowstone with the highest 5S number values ](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/2-stat-of-park-observations.png "Observation Statistics by Park")
 ![Median for observation around 120 observations ](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/3-stat-of-total-observations.png "Five Number Summary for Observations")
+![Mode for observation around 100 observations](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/7-observations-histplot.png "Observations Histplot")
 ![Above 140 Species of Concern](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/4-danger-scale.png "Danger Scale")
 ![Species of birds have the highest amount of species in-danger](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/5-categories-in_danger.png "Total Observations by Park")
 ![Reptile, Amphibian and Non-Vascular Plant with the lowest amount of observations](https://github.com/KarolZG/biodiversity-starter/blob/main/plots/6-percentage-in_danger-by-park.png "Distribution of In-Danger Species Observations By Park")

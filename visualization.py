@@ -59,6 +59,10 @@ ax.tick_params(axis='both', which='major', labelsize=12)
 ax.yaxis.grid(True, linestyle='-', alpha=0.7)
 ax.set_axisbelow(True)
 
+for container in ax.containers:
+    labels = [f'{val/1e6:.2f}M' for val in container.datavalues]
+    ax.bar_label(container, labels=labels, padding=5, fontsize=11)
+
 sns.despine()
 plt.tight_layout()
 plt.savefig('plots/1-total-observations.png', dpi=300)
@@ -109,8 +113,10 @@ plt.ylabel('Number of Species', fontsize=14, labelpad=20)
 
 ax.tick_params(axis='both', which='major', labelsize=12)
 ax.yaxis.grid(True, linestyle='-', alpha=0.7)
-ax.yaxis.grid(True, alpha=0.7)
 ax.set_axisbelow(True)
+
+for container in ax.containers:
+    ax.bar_label(container, fmt='%1d', padding=5, fontsize=11)
 
 sns.despine()
 plt.tight_layout()
@@ -132,6 +138,9 @@ ax.tick_params(axis='both', which='major', labelsize=12)
 plt.xticks(rotation=10)
 ax.yaxis.grid(True, linestyle='-', alpha=0.7)
 ax.set_axisbelow(True)
+
+for container in ax.containers:
+    ax.bar_label(container, fmt='%1d', padding=3, fontsize=11)
 
 sns.despine()
 plt.tight_layout()
@@ -183,3 +192,20 @@ plt.tight_layout(pad=3.0)
 plt.savefig('plots/6-percentage-in_danger-by-park.png', dpi=300, bbox_inches='tight')
 plt.close()
 
+# Additional histplot of observations
+plt.figure(figsize=(10,6))
+ax = plt.subplot(1, 1, 1)
+
+sns.histplot(data=observations, x='observations', bins=20, color='green')
+
+plt.title('Observations - Histplot',  fontsize=18, fontweight='bold', pad=20)
+plt.xlabel('Amount of Observations', fontsize=14, labelpad=20)
+plt.ylabel('Count', fontsize=14, labelpad=20)
+
+ax.tick_params(axis='both', which='major', labelsize=12)
+ax.yaxis.grid(True, linestyle='-', alpha=0.7)
+ax.set_axisbelow(True)
+
+plt.tight_layout()
+plt.savefig('plots/7-observations-histplot.png', dpi=300)
+plt.close()
